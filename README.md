@@ -13,7 +13,9 @@ O sistema realiza previsões cruzando características socioeconômicas dos estu
 ├── MICRODADOS_ENCCEJA_2024_REG_NAC.csv  # Base de dados oficial do INEP (deve ser baixada localmente)
 ```
 ---
-
+## Link para download da Base: 
+https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/encceja
+---
 ## Funcionalidades
 
 - **Processamento dos dados via ETL (Chunksize):** Varredura inteligente de arquivos massivos do governo (mais de 830 mil linhas) em blocos, aplicando filtros de higienização de dados em tempo real.
