@@ -6,7 +6,7 @@ import os
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.preprocessing import StandardScaler
 
-# 1. Configura diretório
+# Configura diretório
 NOME_ARQUIVO = "MICRODADOS_ENCCEJA_2024_REG_NAC.csv"
 PASTA_DO_SCRIPT = os.path.dirname(os.path.abspath(__file__))
 ARQUIVO_CSV = os.path.join(PASTA_DO_SCRIPT, NOME_ARQUIVO)
@@ -171,37 +171,37 @@ def processar_decisao():
         # Ciências Humanas
         vizinhos_acima_ch = sum(1 for n in notas_ch_vizinhos if n > nota_ch_p)
         if vizinhos_acima_ch >= 3:
-            comparacao_ch = "sua nota INFERIOR à maioria deles."
+            comparacao_ch = "sua nota INFERIOR à maioria dos vizinhos."
         else:
-            comparacao_ch = "sua nota SUPERIOR à maioria deles."
+            comparacao_ch = "sua nota SUPERIOR à maioria dos vizinhos."
 
         # Matemática
         vizinhos_acima_mat = sum(1 for n in notas_mat_vizinhos if n > nota_mat_p)
         if vizinhos_acima_mat >= 3:
-            comparacao_mat = "sua nota INFERIOR à maioria deles."
+            comparacao_mat = "sua nota INFERIOR à maioria dos vizinhos."
         else:
-            comparacao_mat = "sua nota SUPERIOR à maioria deles."
+            comparacao_mat = "sua nota SUPERIOR à maioria dos vizinhos."
 
         # Linguagens e Códigos
         vizinhos_acima_lc = sum(1 for n in notas_lc_vizinhos if n > nota_lc_p)
         if vizinhos_acima_lc >= 3:
-            comparacao_lc = "sua nota INFERIOR à maioria deles."
+            comparacao_lc = "sua nota INFERIOR à maioria dos vizinhos."
         else:
-            comparacao_lc = "sua nota SUPERIOR à maioria deles."
+            comparacao_lc = "sua nota SUPERIOR à maioria dos vizinhos."
         
         # Ciências da Natureza
         vizinhos_acima_cn = sum(1 for n in notas_cn_vizinhos if n > nota_cn_p)
         if vizinhos_acima_cn >= 3:
-            comparacao_cn = "sua nota INFERIOR à maioria deles."
+            comparacao_cn = "sua nota INFERIOR à maioria dos vizinhos."
         else:
-            comparacao_cn = "sua nota SUPERIOR à maioria deles."
+            comparacao_cn = "sua nota SUPERIOR à maioria dos vizinhos."
 
         # Redação
         vizinhos_acima_red = sum(1 for n in notas_red_vizinhos if n > nota_red_p)
         if vizinhos_acima_red >= 3:
-            comparacao_red = "sua nota INFERIOR à maioria deles."
+            comparacao_red = "sua nota INFERIOR à maioria dos vizinhos."
         else:
-            comparacao_red = "sua nota SUPERIOR à maioria deles."
+            comparacao_red = "sua nota SUPERIOR à maioria dos vizinhos."
         
         # Lógica de Tomada de Decisão Pedagógica
         recomendacoes = []
@@ -212,7 +212,7 @@ def processar_decisao():
             recomendacoes.append(f"REFORÇO EM CIÊNCIAS HUMANAS: Nota prevista ({nota_ch_p:.1f}) exige atenção preventiva.")
             risco_reprovacao = True
         else:
-            recomendacoes.append(f"CIÊNCIAS HUMANAS ESTÁVEL: Projeção de aprovação regular ({nota_ch_p:.1f}), sendo {comparacao_ch}")
+            recomendacoes.append(f"CIÊNCIAS HUMANAS ESTÁVEL: Projeção de aprovação regular ({nota_ch_p:.1f})")
         
         if reprovados_ch >= 3:
             risco_reprovacao = True
@@ -223,7 +223,7 @@ def processar_decisao():
             recomendacoes.append(f"REFORÇO EM MATEMÁTICA: Nota prevista ({nota_mat_p:.1f}) exige atenção preventiva.")
             risco_reprovacao = True
         else:
-            recomendacoes.append(f"MATEMÁTICA ESTÁVEL: Projeção de aprovação regular ({nota_mat_p:.1f}), sendo {comparacao_mat}")
+            recomendacoes.append(f"MATEMÁTICA ESTÁVEL: Projeção de aprovação regular ({nota_mat_p:.1f})")
 
         if reprovados_mat >= 3:
             risco_reprovacao = True
@@ -234,7 +234,7 @@ def processar_decisao():
             recomendacoes.append(f"REFORÇO EM LINGUAGENS: Nota prevista ({nota_lc_p:.1f}) exige atenção preventiva.")
             risco_reprovacao = True
         else:
-            recomendacoes.append(f"LINGUAGENS ESTÁVEL: Projeção de aprovação regular ({nota_lc_p:.1f}), sendo {comparacao_lc}")
+            recomendacoes.append(f"LINGUAGENS ESTÁVEL: Projeção de aprovação regular ({nota_lc_p:.1f})")
         
         if reprovados_lc >= 3:
             risco_reprovacao = True
@@ -245,7 +245,7 @@ def processar_decisao():
             recomendacoes.append(f"REFORÇO EM CIÊNCIAS DA NATUREZA: Nota prevista ({nota_cn_p:.1f}) exige atenção preventiva.")
             risco_reprovacao = True
         else:
-            recomendacoes.append(f"CIÊNCIAS DA NATUREZA ESTÁVEL: Projeção de aprovação regular ({nota_cn_p:.1f}), sendo {comparacao_cn}")
+            recomendacoes.append(f"CIÊNCIAS DA NATUREZA ESTÁVEL: Projeção de aprovação regular ({nota_cn_p:.1f})")
 
         if reprovados_cn >= 3:
             risco_reprovacao = True
@@ -256,7 +256,7 @@ def processar_decisao():
             recomendacoes.append(f"OFICINA DE REDAÇÃO OBRIGATÓRIA: Nota prevista ({nota_red_p:.1f}) exige atenção preventiva.")
             risco_reprovacao = True
         else:
-            recomendacoes.append(f"REDAÇÃO ESTÁVEL: Projeção de aprovação regular ({nota_red_p:.1f}), sendo {comparacao_red}")
+            recomendacoes.append(f"REDAÇÃO ESTÁVEL: Projeção de aprovação regular ({nota_red_p:.1f})")
 
         if reprovados_red >= 3:
             risco_reprovacao = True
